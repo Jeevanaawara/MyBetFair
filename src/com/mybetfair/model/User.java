@@ -1,21 +1,21 @@
 package com.mybetfair.model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class User {
-	public String username;
-	public String password;
-	public String token;
+	public SimpleStringProperty username = new SimpleStringProperty();
+	public SimpleStringProperty token = new SimpleStringProperty();
+	public SimpleStringProperty product = new SimpleStringProperty();
 	public static User user;
-	
-	private User(){
+
+	private User() {
 	}
-	
-	public static User getSingleton(){
-		if(user == null){
+
+	public static User getSingleton() {
+		if (user == null) {
 			user = new User();
 		}
-		return user;
-	}
-	public User getUser() {
 		return user;
 	}
 
@@ -23,23 +23,28 @@ public class User {
 		this.user = user;
 	}
 
-	public String getUsername() {
+	public SimpleStringProperty getUsernameProperty() {
 		return username;
 	}
+
 	public void setUsername(String username) {
-		this.username = username;
+		this.username.set(username);
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
 	public String getToken() {
-		return token;
+		return token.get();
 	}
+
 	public void setToken(String token) {
-		this.token = token;
+		this.token.set(token);
 	}
-	
+
+	public String getProduct() {
+		return product.get();
+	}
+
+	public void setProduct(String token) {
+		this.product.set(token);
+	}
+
 }
