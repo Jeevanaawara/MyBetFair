@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Testing</h1>
+        <script>
+            $(function(){
+                $.ajax({
+                    "method" : "GET"
+                    ,"url" : "https://api.betfair.com/exchange/betting/rest/v1/en/navigation/menu.json"
+                    ,"Connection": 'keep-alive'
+                    ,"X-Application": "7qgehESE204U2m8F"
+                    ,"X-Authentication": "Em5lfmrtNhJsKdTHD8a5BZImzalkwV6BEk1RuvNRk20="
+                    ,"Accept": "application/json"
+                    ,"Accept-Encoding": "gzip,deflate"
+                    ,"orgin":"*"
+                    ,"Access-Control-Allow-Origin" : "*"
+                })
+                .then(function(response){
+                    console.log(response);
+                })
+            })
+        </script>
+    </body>
+</html>
