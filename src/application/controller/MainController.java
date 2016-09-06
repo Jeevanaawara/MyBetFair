@@ -73,13 +73,17 @@ public class MainController implements Initializable {
 
 			@Override
 			protected void updateItem(JSONObject item, boolean empty) {
-				if (!empty)
+				if (empty){
+					setText(null);
+				}else{
 					try {
 						setText(item.getString("name"));
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
+					}					
+					
+				}
 				super.updateItem(item, empty);
 			}
 

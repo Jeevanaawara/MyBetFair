@@ -121,7 +121,7 @@ public class Connection {
 			while ((string = bufferedReader.readLine()) != null) {
 				stringBuilder.append(string);
 			}
-//			System.out.println("Response: " + stringBuilder.toString());
+			System.out.println("Response: " + stringBuilder.toString());
 			bufferedReader.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
